@@ -130,8 +130,21 @@ oppure i caratteri ∧ (&and;) e ∨ (&or;)
 
 
 .slider-wrapper{
-    
-    box-shadow: 8px 8px 0px 9px #000000;
+    border: solid 5px var(--azure);
+    /* box-shadow: 8px 8px 0px 9px #000000; */
 
    
 }
+
+
+.fade-enter-active,
+.fade-leave-active{
+    transition: opacity 1.5s ease-out;
+}
+    
+
+.fade-enter,
+.fade-leave-to{
+    opacity: 0;
+}
+    
