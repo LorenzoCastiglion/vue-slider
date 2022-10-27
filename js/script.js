@@ -23,3 +23,65 @@ const slides = [
 ];
 
 console.log(slides);
+
+
+const {createApp} = Vue;
+
+
+const app = createApp({
+    data(){
+        return{
+            activeSlide: 0,
+            scroll: null,
+            games: slides,
+        }},
+
+        methods:{
+
+            nextSlide(){
+                if(this.activeSlide < this.games.length -1){
+                    this.activeSlide++;
+                }else{
+                    this.activeSlide = 0;
+                }
+            },
+            
+            prevSlide(){
+                if(this.activeSlide > 0){
+                    this.activeSlide--;
+                }else{
+                    this.activeSlide = this.games.length -1;
+                }
+            },
+
+            showThisSlide(active){
+                this.activeSlide = active;
+            },
+            
+            autoScroll(){
+                this.scroll = setInterval(()=>{
+                this.nextSlide();
+                },2000)
+            },
+
+            stopScroll(){
+                clearInterval( this.scroll);
+                
+               
+            }
+        },
+
+        mounted(){
+            this.autoScroll();
+        }
+    
+
+
+
+
+
+
+
+
+})
+app.mount('#app');
