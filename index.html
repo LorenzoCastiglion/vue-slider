@@ -18,7 +18,9 @@
             
                 <div class="slider-wrapper" tabindex="0">
                     <div class="item" @mouseover="stopScroll()" @mouseleave="autoScroll()">
-                        <img :src="games[activeSlide].image" alt="{{'immagine ' + activeSlide}}" />
+                            <transition name="fade">
+                                <img :src="games[activeSlide].image" alt="{{'immagine ' + activeSlide}}" />
+                            </transition>
                         <div class="text">
                             <h3>{{games[activeSlide].title}}</h3>
                             <p>
