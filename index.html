@@ -13,28 +13,28 @@
 
     <div id="app">
 
-        <div class="container" >
-            <div class="slider-wrapper" tabindex="0">
-
-                <div class="item" @mouseover="stopScroll()" @mouseleave="autoScroll()">
-                    <img :src="games[activeSlide].image" alt="{{'immagine ' + activeSlide}}" />
-                    <div class="text">
-                        <h3>{{games[activeSlide].title}}</h3>
-                        <p>
-                            {{games[activeSlide].text}}
-                        </p>
+        <div class="bg"  :style="{backgroundImage : `url(${games[activeSlide].image})`}">
+            <div class="container" >
+            
+                <div class="slider-wrapper" tabindex="0">
+                    <div class="item" @mouseover="stopScroll()" @mouseleave="autoScroll()">
+                        <img :src="games[activeSlide].image" alt="{{'immagine ' + activeSlide}}" />
+                        <div class="text">
+                            <h3>{{games[activeSlide].title}}</h3>
+                            <p>
+                                {{games[activeSlide].text}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="thumbs">
+                        <div class="prev" @click="prevSlide()"></div>
+                        <div class="next"  @click="nextSlide()"></div>
+                        <div @click="showThisSlide(index)" class="thumb"  v-for = "(g,index) in games" :key="index" :src="games[index].image" :class=" activeSlide === index ? 'active' : '' " >
+                            <img :src="games[index].image" :alt="'games.[index].title'"/>
+                        </div>
+            
                     </div>
                 </div>
-
-                <div class="thumbs">
-                    <div class="prev" @click="prevSlide()"></div>
-                    <div class="next"  @click="nextSlide()"></div>
-                    <div @click="showThisSlide(index)" class="thumb"  v-for = "(g,index) in games" :key="index" :src="games[index].image" :class=" activeSlide === index ? 'active' : '' " >
-                        <img :src="games[index].image" :alt="'games.[index].title'"/>
-                    </div>
-                    
-                </div>
-
             </div>
         </div>
 

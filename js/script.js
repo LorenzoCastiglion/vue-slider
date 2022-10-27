@@ -66,7 +66,7 @@ const app = createApp({
 
             stopScroll(){
                 clearInterval( this.scroll);
-                
+                this.scroll = null;
                
             }
         },

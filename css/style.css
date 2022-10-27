@@ -1,14 +1,30 @@
+:root{
+    --black: #212636;
+    --yellow: #F8DF3D;
+    --red: #AC0810;
+    --azure: #C8E0E7;
+    --purple: #C189FB;
+}
+
+
+
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+
+
 .container {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    backdrop-filter: blur(5px);
 }
 
 .item {
@@ -22,6 +38,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    
 }
 
 .item .text {
@@ -51,7 +68,8 @@
 }
 
 .thumb.active {
-    border: 2px solid #ccc;
+    outline: 3px solid var(--azure);
+    outline-offset: -.2rem;
     opacity: 1;
 }
 
@@ -102,4 +120,18 @@ oppure i caratteri ∧ (&and;) e ∨ (&or;)
     bottom: 35%;
     left: 50%;
     transform: translate(-50%) rotate(135deg);
+}
+
+.bg{
+    background-position: center;
+    background-size: cover;
+    background-image: url(../img/02.webp);
+}
+
+
+.slider-wrapper{
+    
+    box-shadow: 8px 8px 0px 9px #000000;
+
+   
 }
